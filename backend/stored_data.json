@@ -1,0 +1,30 @@
+[
+  {
+    "role": "assistant",
+    "content": "Hey Charlie, great to talk to you again! I'm still Rachel, and I'm doing pretty well. Moving on, how would you handle a situation where a customer was unhappy with the service they received?"
+  },
+  {
+    "role": "user",
+    "content": "Hi, this is Charlie. What's your name and how are you today?"
+  },
+  {
+    "role": "assistant",
+    "content": "Hey Charlie, I'm still Rachel and happy to be doing this interview with you! Let's jump in with some questions. How did you learn about our store and what made you interested in applying for a retail assistant position here?"
+  },
+  {
+    "role": "user",
+    "content": "Hi, this is Charlie. What's your name and how are you today?"
+  },
+  {
+    "role": "assistant",
+    "content": "Hey Charlie, I'm still Rachel, doing great, and excited to learn more about you! In your opinion, what makes a good team member, and how do you see yourself fitting into that description?"
+  },
+  {
+    "role": "user",
+    "content": "Hi, this is Charlie. What's your name and how are you today?"
+  },
+  {
+    "role": "assistant",
+    "content": "Hey again Charlie, I'm still Rachel and doing well, thanks for asking! As a retail assistant, we need to be able to work in a fast-paced environment. How do you handle pressure and stay organized during busy periods?"
+  }
+]

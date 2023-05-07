@@ -12,7 +12,7 @@ def get_recent_messages():
     file_name = DB_FILE
     learn_instructions = {
         "role": "system",
-        "content": "You are interviewing the user for a job as a retail assistant. Ask short questions that relevant to the junior position. Your name is Rachel. The user is called Shaun. Keep your answers to under 30 words."
+        "content": "You are interviewing the user for a job as a retail assistant. Ask short questions that relevant to the junior position. Your name is Rachel. The user is called Charlie. Keep your answers to under 30 words."
     }
 
     # Initialize messages
@@ -21,9 +21,9 @@ def get_recent_messages():
     # Add a random element
     x = random.uniform(0, 1)
     if x < 0.5:
-        learn_instructions["content"] += " Your response will include some dry humour."
+        learn_instructions["content"] += " Your response will include some light hearted humour."
     else:
-        learn_instructions["content"] += "Your response will include a rather challenging question."
+        learn_instructions["content"] += "Your will have a playful tone."
 
     # Append instruction to message
     messages.append(learn_instructions)
@@ -35,9 +35,9 @@ def get_recent_messages():
 
             # Append last 5 items of data
             if data:
-                messages += data[-5]
+                messages += data[-5:]
     except Exception as e:
-        print(e)
+        print("database", e)
 
     # Return
     return messages
