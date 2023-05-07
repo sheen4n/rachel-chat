@@ -1,6 +1,8 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, File, UploadFile, HTTPException
 from fastapi.responses import StreamingResponse
 from fastapi.middleware.cors import CORSMiddleware
+from decouple import config
+import openai
 
 
 # Custom Function Imports
@@ -41,12 +43,17 @@ async def reset_conversation():
     return {"message": "conversation reset"}
 
 
-@app.get("/post-audio-get/")
-async def get_audio():
+@app.post("/post-audio/")
+async def post_audio(file: UploadFile = File(...)):
     print("api post audio get trigger")
 
-    # Get saved audio
-    audio_input = open("voice.mp3", "rb")
+    # # Get saved audio
+    # audio_input = open("voice.mp3", "rb")
+
+    # Save File From Frontend
+    with open(file.filename, "wb") as buffer:
+        buffer.write(file.file.read())
+    audio_input = open(file.filename, "rb")
 
     # Decode audio
     message_decoded = convert_audio_to_text(audio_input)
@@ -79,7 +86,7 @@ async def get_audio():
         yield audio_output
 
     # Return audio file
-    return StreamingResponse(iterfile(), media_type="audio/mpeg")
+    return StreamingResponse(iterfile(), media_type="application/octet-stream")
 
 
 # Post bot response
