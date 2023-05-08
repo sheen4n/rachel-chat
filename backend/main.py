@@ -15,6 +15,7 @@ app = FastAPI()
 
 # CORS - Origins
 origins = [
+    "http://127.0.0.1:5173",
     "http://localhost:5173",
     "http://localhost:5174",
     "http://localhost:4173",
@@ -96,5 +97,5 @@ async def post_audio(file: UploadFile = File(...)):
 #     print("hello")
 
 
-# Run app with main:app --reload for development
+# Run app with uvicorn main:app --reload for development
 # access docs with http://localhost:8000/docs
